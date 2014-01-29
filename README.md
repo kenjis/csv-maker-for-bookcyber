@@ -1,38 +1,38 @@
-#FuelPHP
+# 売りたい書籍のリスト作成 for 電脳書房
 
-* Version: 1.7
-* [Website](http://fuelphp.com/)
-* [Release Documentation](http://docs.fuelphp.com)
-* [Release API browser](http://api.fuelphp.com)
-* [Development branch Documentation](http://dev-docs.fuelphp.com)
-* [Development branch API browser](http://dev-api.fuelphp.com)
-* [Support Forum](http://fuelphp.com/forums) for comments, discussion and community support
+[電脳書房](http://www.bookcyber.net/)では売りたい書籍のリストをCSVファイルで送り事前見積りをしてもらうのが、電脳書房が[おすすめする買取方法](http://www.bookcyber.net/kaitori.htm)となっています。
 
-## Description
+そのためのCSVファイルを作成するためのWebアプリです。
 
-FuelPHP is a fast, lightweight PHP 5.3 framework. In an age where frameworks are a dime a dozen, We believe that FuelPHP will stand out in the crowd.  It will do this by combining all the things you love about the great frameworks out there, while getting rid of the bad.
+[国立国会図書館サーチのAPI](http://iss.ndl.go.jp/information/api/)を使っています。
 
-## More information
+## 要件
 
-For more detailed information, see the [development wiki](https://github.com/fuelphp/fuelphp/wiki).
+* PHP 5.3以上（5.4以上を推奨）
+* [Git](http://git-scm.com/)コマンド（インストールに必要）
 
-##Development Team
+## インストール方法
 
-* Harro Verton - Project Manager, Developer ([http://wanwizard.eu/](http://wanwizard.eu/))
-* Frank de Jonge - Developer ([http://frenky.net/](http://frenky.net/))
+~~~
+$ git clone https://github.com/kenjis/csv-maker-for-bookcyber.git
+$ cd csv-maker-for-bookcyber
+$ php composer.phar install
+~~~
 
-### Want to join?
+## 実行方法
 
-The FuelPHP development team is always looking for new team members, who are willing
-to help lift the framework to the next level, and have the commitment to not only
-produce awesome code, but also great documentation, and support to our users.
+publicフォルダをWebサーバからアクセス可能に設定し、ブラウザでアクセスしてください。
 
-You can not apply for membership. Start by sending in pull-requests, work on outstanding
-feature requests or bugs, and become active in the #fuelphp IRC channel. If your skills
-are up to scratch, we will notice you, and will ask you to become a team member.
+PHP 5.4以上では、以下のコマンドを実行し、http://localhost:8000 にアクセスしてください。
 
-### Alumni
+~~~
+$ php oil server
+~~~
 
-* Jelmer Schreuder - Developer ([http://jelmerschreuder.nl/](http://jelmerschreuder.nl/))
-* Phil Sturgeon - Developer ([http://philsturgeon.co.uk](http://philsturgeon.co.uk))
-* Dan Horrigan - Founder, Developer ([http://dhorrigan.com](http://dhorrigan.com))
+## 開発
+
+最低限の機能しかありません。書籍の状態は記入できませんのでダウンロードしたCSVを表計算ソフトで加工してください。ページのデザインもひどいです。テストもありません。ソースを見て直したくなった人はPull Requestしてください。
+
+## ライセンス
+
+MITライセンスです。LICENSEファイルを参照してください。

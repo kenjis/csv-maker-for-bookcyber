@@ -18,7 +18,117 @@
     "require": {
         "php": ">=5.3.3",
         "monolog/monolog": "1.5.*",
-    	"fuelphp/upload": "2.0.1"
+    	"fuelphp/upload": "2.0.1",
+        "fuel/core": "1.7",
+        "fuel/oil": "1.7"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "fuel/core",
+                "type": "fuel-package",
+                "version": "1.7",
+                "require": {
+                    "composer/installers": "*"
+                },
+                "source": {
+                    "url": "https://github.com/fuel/core.git",
+                    "type": "git",
+                    "reference": "1.7/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "fuel/auth",
+                "type": "fuel-package",
+                "version": "1.7",
+                "require": {
+                    "composer/installers": "*"
+                },
+                "source": {
+                    "url": "https://github.com/fuel/auth.git",
+                    "type": "git",
+                    "reference": "1.7/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "fuel/email",
+                "type": "fuel-package",
+                "version": "1.7",
+                "require": {
+                    "composer/installers": "*"
+                },
+                "source": {
+                    "url": "https://github.com/fuel/email.git",
+                    "type": "git",
+                    "reference": "1.7/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "fuel/oil",
+                "type": "fuel-package",
+                "version": "1.7",
+                "require": {
+                    "composer/installers": "*"
+                },
+                "source": {
+                    "url": "https://github.com/fuel/oil.git",
+                    "type": "git",
+                    "reference": "1.7/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "fuel/orm",
+                "type": "fuel-package",
+                "version": "1.7",
+                "require": {
+                    "composer/installers": "*"
+                },
+                "source": {
+                    "url": "https://github.com/fuel/orm.git",
+                    "type": "git",
+                    "reference": "1.7/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "fuel/parser",
+                "type": "fuel-package",
+                "version": "1.7",
+                "require": {
+                    "composer/installers": "*"
+                },
+                "source": {
+                    "url": "https://github.com/fuel/parser.git",
+                    "type": "git",
+                    "reference": "1.7/master"
+                }
+            }
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "fuel/core": ["fuel/core"],
+            "fuel/packages/auth": ["fuel/auth"],
+            "fuel/packages/email": ["fuel/email"],
+            "fuel/packages/oil": ["fuel/oil"],
+            "fuel/packages/orm": ["fuel/orm"],
+            "fuel/packages/parser": ["fuel/parser"]
+        }
     },
     "suggest": {
         "mustache/mustache": "Allow Mustache templating with the Parser package",
