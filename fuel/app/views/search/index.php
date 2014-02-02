@@ -8,29 +8,35 @@
 	<?php echo Asset::js('//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'); ?>
 
 	<script>
-	// クリックした table の行のセルの値を取得
+	// クリックしたら書籍を追加
 	$(document).on('click', '#books td', function() {
+		// クリックした table の行のセルの値を取得
 		var tr = $(this).parent()[0];
 		var title = $(tr).children().eq(0).text();
 		var isbn  = $(tr).children().eq(1).text();
+		var col = $(tr).children('td').index(this);
 		//console.log(title);
 		//console.log(isbn);
+		//console.log(col);
 		
-		$.ajax({
-			type: 'POST',
-			url: './cart/add',
-			data: {'title': title, 'isbn': isbn},
-			dataType: 'json',
-			success: function(data) {
-				alert(data.status);
-				location.reload();
-			},
-			error: function() {
-				alert('Post Error');
-			}
-		});
+		if (col !== 4) {	// リンクの列は除外
+			$.ajax({
+				type: 'POST',
+				url: './cart/add',
+				data: {'title': title, 'isbn': isbn},
+				dataType: 'json',
+				success: function(data) {
+					alert(data.status);
+					location.reload();
+				},
+				error: function() {
+					alert('Post Error');
+				}
+			});
+		}
 	});
 	
+	// クリックしたら書籍を削除
 	$(document).on('click', '#cart td', function() {
 		var tr = $(this).parent()[0];
 		var title = $(tr).children().eq(0).text();
